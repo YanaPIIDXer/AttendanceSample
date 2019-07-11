@@ -13,7 +13,11 @@ class UserManageController < ApplicationController
 
     @addUser = User.create(UserName: userName, PassWord: passWord, SalaryId: salaryId)
     if !@addUser.save
-      redirect_to "/user_manage", :alert => "追加に失敗しました。"
+      errorMessage = "追加に失敗しました。"
+      if @addUser.errors[:UserName]
+        errorMessage = "同じ名前のアルバイトは登録できません。"
+      end
+      redirect_to "/user_manage", :alert => errorMessage
       return
     end
     
