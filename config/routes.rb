@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   # login
   post 'login' => 'login#index'
-  get 'login/success/:userName' => 'login#success'
-  get 'login/emptyinput'
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

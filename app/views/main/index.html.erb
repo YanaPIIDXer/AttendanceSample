@@ -1,10 +1,15 @@
 <h1>勤怠管理システム</h1>
 <hr />
-<form method="POST" action="/login">
-    ユーザ名：<input type="text" name="UserName"><br />
-    パスワード：<input type="password" name="PassWord"><br />
-    <input type="submit" value="ログイン"><br />
-</form>
+
+<%= form_with scope: :session, url: "/login" do |f| %>
+    ユーザ名：
+    <%= f.text_field :userName %>
+    <br />
+    パスワード：
+    <%= f.password_field :passWord %>
+    <br />
+    <%= f.submit "ログイン" %>
+<% end %>
 
 <% if flash[:notice] %>
     <b><%= flash[:notice] %></b><br />
