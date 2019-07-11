@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   post 'salary_manage' => 'salary_manage#create'
   post 'salary_manage/delete'
   get 'user_manage' => 'user_manage#index'
-  post 'user_manage' => 'user_manage#create'
+  post 'user_manage/create'
+  post 'user_manage/change'
   post 'user_manage/delete'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

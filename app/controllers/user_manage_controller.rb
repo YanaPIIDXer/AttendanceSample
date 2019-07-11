@@ -25,6 +25,18 @@ class UserManageController < ApplicationController
     redirect_to "/user_manage", :notice => "追加しました。"
   end
   
+  def change
+    userId = params[:userId]
+    salaryId = params[:salaryId]
+
+    @changeUser = User.find_by(id: userId)
+    if !@changeUser.update(SalaryId: salaryId)
+      redirect_to "/user_manage", :alert => "時給の変更に失敗しました。"
+      return
+    end
+    redirect_to "/user_manage", :notice => "時給を変更しました。"
+  end
+
   def delete
     userId = params[:userId]
     User.find_by(id: userId).delete
