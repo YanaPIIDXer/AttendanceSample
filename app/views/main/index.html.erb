@@ -1,7 +1,15 @@
 <h1>勤怠管理システム</h1>
 <hr />
-<form method="POST" action="./">
+<form method="POST" action="/login">
     ユーザ名：<input type="text" name="UserName"><br />
     パスワード：<input type="password" name="PassWord"><br />
     <input type="submit" value="ログイン"><br />
 </form>
+
+<% if flash[:notice] %>
+    <b><%= flash[:notice] %></b><br />
+<% end %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font><br />
+<% end %>
