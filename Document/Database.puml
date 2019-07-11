@@ -1,12 +1,12 @@
 @startuml
 hide circle
 
-class admin{
+class admins{
    + UserName
    + PassWord
 }
 
-class user{
+class users{
   + Id
   + UserName
   + PassWord
@@ -14,13 +14,13 @@ class user{
   + CurrentWorkTimeId
 }
 
-class salary{
+class salarys{
   + Id
   + HourlySalary
   + IsActive
 }
 
-class work_time{
+class work_times{
   + Id
   + UserId
   + StartTime
