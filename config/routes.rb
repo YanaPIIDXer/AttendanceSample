@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # admin
   get 'admin_login' => 'admin_login#index'
+  post 'admin_check' => 'admin_check#index'
  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

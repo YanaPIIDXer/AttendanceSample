@@ -1,0 +1,2 @@
+module AdminCheckHelper
+end
