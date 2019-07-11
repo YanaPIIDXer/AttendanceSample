@@ -19,4 +19,8 @@ class SalaryManageController < ApplicationController
     redirect_to '/salary_manage', :notice => "追加しました。"
   end
 
+  def delete
+    
+  end
+
 end

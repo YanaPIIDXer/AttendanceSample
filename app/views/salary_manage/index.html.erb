@@ -1,6 +1,6 @@
 <%= render partial: "application/pageheader", locals: {title: "管理者ページ"} %>
 
-<% Salary.allActive.each do |salary| %>
+<% Salary.all.each do |salary| %>
     <%= salary.HourlySalary %>円<br />
 <% end %>
 <hr />
