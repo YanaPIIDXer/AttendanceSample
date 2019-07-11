@@ -14,10 +14,9 @@ class AdminCheckController < ApplicationController
             return
         end
 
-        session[:userName] = userName
+        session[:adminName] = userName
 
-        # 仮
-        redirect_to "/admin_login", :alert => "ユーザ名：#{userName}"
+        redirect_to "/admin_main"
     end
 
 private
