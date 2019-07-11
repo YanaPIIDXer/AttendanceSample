@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   get 'main' => 'main#index'
   get 'main/index'
 
-  # login
-  post 'login' => 'login#index'
- 
   # user
   get 'user_login' => 'user_login#index'
 
