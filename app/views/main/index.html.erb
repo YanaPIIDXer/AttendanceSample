@@ -1,20 +1,5 @@
 <h1>勤怠管理システム</h1>
 <hr />
 
-<%= form_with scope: :session, url: "/login" do |f| %>
-    ユーザ名：
-    <%= f.text_field :userName %>
-    <br />
-    パスワード：
-    <%= f.password_field :passWord %>
-    <br />
-    <%= f.submit "ログイン" %>
-<% end %>
-
-<% if flash[:notice] %>
-    <b><%= flash[:notice] %></b><br />
-<% end %>
-
-<% if flash[:alert] %>
-    <font color="#FF0000"><%= flash[:alert] %></font><br />
-<% end %>
+<a href="/user_login">アルバイトログイン</a><br />
+<a href="/admin_login">管理者ログイン</a><br />
