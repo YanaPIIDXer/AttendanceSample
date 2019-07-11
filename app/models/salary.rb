@@ -1,5 +1,5 @@
 class Salary < ApplicationRecord
 
-    scope :allActive, -> { where(IsActive) }
+    scope :allActive, -> { where(IsActive: true) }
     
 end
