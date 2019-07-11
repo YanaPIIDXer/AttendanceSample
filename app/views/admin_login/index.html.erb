@@ -1,14 +1,6 @@
 <%= render partial: "application/pageheader", locals: {title: "管理者ログイン"} %>
-<%= form_with  scope: :session, url: "/admin_check" do |form| %>
-    ユーザ名：
-    <%= form.text_field :userName %>
-    <br />
-    パスワード：
-    <%= form.password_field :passWord %>
-    <br />
-    <%= form.submit "ログイン" %>
-    <br />
-<% end %>
+
+<%= render partial: "application/loginform", locals: {targetUrl: "/admin_check"} %>
 
 <% if flash[:alert] %>
     <font color="#FF0000"><%= flash[:alert] %></font>
