@@ -8,3 +8,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create(:UserName => "Admin", :PassWord => "Admin")
+
+Salary.create(:HourlySalary => 500)
