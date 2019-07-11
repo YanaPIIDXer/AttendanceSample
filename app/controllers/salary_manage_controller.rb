@@ -20,7 +20,12 @@ class SalaryManageController < ApplicationController
   end
 
   def delete
-    @removeSalary = Salary.find(params[:salaryId]).delete
+    @users = User.find_by(SalaryId: params[:salaryId])
+    if @users && !@users.update(SalaryId: 1)
+      redirect_to '/salary_manage', :notice => "削除に失敗しました。"
+      return
+    end
+    Salary.find(params[:salaryId]).delete
     redirect_to '/salary_manage', :notice => "削除しました。"
   end
 
