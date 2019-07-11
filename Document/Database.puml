@@ -1,0 +1,28 @@
+@startuml
+hide circle
+
+class admin{
+   + UserName
+   + PassWord
+}
+
+class user{
+  + Id
+  + UserName
+  + PassWord
+  + SalaryId
+}
+
+class salary{
+  + Id
+  + HourlySalary
+}
+
+class work_time{
+  + UserId
+  + StartTime
+  + EndTime
+  + SalaryId
+}
+
+@end
