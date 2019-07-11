@@ -10,10 +10,8 @@ class LoginController < ApplicationController
       return
     end
 
-    # ↓POSTとしてブン投げられたメソッドではセッションが正しく保存できない模様。
     session[:userName] = userName
 
-    # ↓仕方ないので一旦GETパラメータで投げてそこで保存する。
     redirect_to "/main/index", notice: "ようこそ、#{session[:userName]}さん。"
   end
 
