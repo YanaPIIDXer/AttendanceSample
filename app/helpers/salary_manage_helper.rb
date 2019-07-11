@@ -1,0 +1,2 @@
+module SalaryManageHelper
+end
