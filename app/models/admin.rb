@@ -1,5 +1,8 @@
 class Admin < ApplicationRecord
     self.primary_key = "UserName"
 
-    scope :isValid, ->(userName, passWord) { where('UserName = ? and PassWord = ?', userName, passWord) }
+    def self.isValid?(userName, passWord)
+        admins = where('UserName = ? and PassWord = ?', userName, passWord)
+        return admins.exists?
+    end
 end
