@@ -11,6 +11,7 @@ class user{
   + UserName
   + PassWord
   + SalaryId
+  + CurrentWorkTimeId
 }
 
 class salary{
@@ -20,6 +21,7 @@ class salary{
 }
 
 class work_time{
+  + Id
   + UserId
   + StartTime
   + EndTime
