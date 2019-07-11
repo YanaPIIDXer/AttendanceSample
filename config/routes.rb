@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'admin_main' => 'admin_main#index'
   get 'user_manage' => 'user_manage#index'
   get 'salary_manage' => 'salary_manage#index'
- 
+  post 'salary_manage' => 'salary_manage#create'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

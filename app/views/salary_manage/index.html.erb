@@ -1,5 +1,24 @@
 <%= render partial: "application/pageheader", locals: {title: "管理者ページ"} %>
 
+<% Salary.allActive.each do |salary| %>
+    <%= salary.HourlySalary %>円<br />
+<% end %>
+<hr />
+
+<h3>時給追加</h3>
+<%= form_with model: @addSalary do |form| %>
+    <%= form.number_field :HourlySalary %>
+    <%= form.submit "追加" %>
+<% end %>
+
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font>
+<% end %>
+
 <div align="right">
     <a href="/admin_main">戻る</a><br />
 </div>
