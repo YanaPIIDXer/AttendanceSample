@@ -17,7 +17,6 @@ class users{
 class salarys{
   + Id
   + HourlySalary
-  + IsActive
 }
 
 class work_times{
@@ -25,7 +24,7 @@ class work_times{
   + UserId
   + StartTime
   + EndTime
-  + SalaryId
+  + HourlySalary
 }
 
 @end
