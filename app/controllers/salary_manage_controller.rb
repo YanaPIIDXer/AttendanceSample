@@ -20,7 +20,8 @@ class SalaryManageController < ApplicationController
   end
 
   def delete
-    
+    @removeSalary = Salary.find(params[:salaryId]).delete
+    redirect_to '/salary_manage', :notice => "削除しました。"
   end
 
 end
