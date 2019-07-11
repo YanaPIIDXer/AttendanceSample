@@ -1,12 +1,13 @@
 class UserManageController < ApplicationController
   def index
+    @users = User.all
   end
 
   def create
     userName = params[:userName]
     passWord = params[:passWord]
     salaryId = params[:salaryId]
-    if userName.empty? || passWord.empty?
+    if !userName || !passWord || userName.empty? || passWord.empty?
       redirect_to "/user_manage", :alert => "ユーザ名かパスワードが入力されていません。"
       return
     end
@@ -22,6 +23,12 @@ class UserManageController < ApplicationController
     end
     
     redirect_to "/user_manage", :notice => "追加しました。"
+  end
+  
+  def delete
+    userId = params[:userId]
+    User.find_by(id: userId).delete
+    redirect_to "/user_manage", :notice => "削除しました。"
   end
   
 end

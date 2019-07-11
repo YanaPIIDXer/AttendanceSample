@@ -1,5 +1,14 @@
 <%= render partial: "application/pageheader", locals: {title: "アルバイト管理"} %>
 
+<% @users.each do |user| %>
+    <%= user.UserName %>
+    <%= form_with model: @removeUser, :url => "/user_manage/delete", :html => {:style => "display: inline"} do |form| %>
+        <%= form.hidden_field :userId, :value => user.id %>
+        <%= form.submit "削除" %>
+    <% end %>
+    <br />
+<% end %>
+
 <h3>アルバイト追加</h3>
 <%= form_with model: @addUser do |form| %>
     ユーザ名
