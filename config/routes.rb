@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # user
   get 'user_login' => 'user_login#index'
+  post 'user_check' => 'user_check#index'
   get 'user_main' => 'user_main#index'
 
   # admin
