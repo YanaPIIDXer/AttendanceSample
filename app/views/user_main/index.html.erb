@@ -10,6 +10,7 @@
 <%= form_with :url => "/work_time/leave", :html => {:style => "display: inline"} do |form| %>
     <%= form.submit "出勤" %>
 <% end %>
+<br />
 
 <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
