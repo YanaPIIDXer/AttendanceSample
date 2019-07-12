@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'user_main/index'
   # main
   get 'main' => 'main#index'
   get 'back_to_top' => 'back_to_top#logout'
 
   # user
   get 'user_login' => 'user_login#index'
+  get 'user_main' => 'user_main#index'
 
   # admin
   get 'admin_login' => 'admin_login#index'
