@@ -37,6 +37,36 @@ class WorkTimeController < ApplicationController
     end
 
     def leave
+        currentTime = DateTime.now
+        user = User.find(session[:userId])
+        if !user
+            redirect_to "/user_main", :alert => "退勤処理に失敗しました。"
+            return
+        end
+
+        if user.CurrentWorkTimeId == 0
+            redirect_to "/user_main", :alert => "まだ出勤していません。"
+            return
+        end
+
+        workTime = WorkTime.find(user.CurrentWorkTimeId)
+        if !workTime
+            redirect_to "/user_main", :alert => "退勤処理に失敗しました。"
+            return
+        end
+
+        workTime.update(EndTime: currentTime)
+        if !workTime.save
+            redirect_to "/user_main", :alert => "退勤処理に失敗しました。"
+            return
+        end
+
+        user.update(CurrentWorkTimeId: 0)
+        if !user.save
+            redirect_to "/user_main", :alert => "退勤処理に失敗しました。"
+            return
+        end
+
         redirect_to "/user_main", :notice => "退勤しました。"
     end
     
