@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # main
   get 'main' => 'main#index'
   get 'back_to_top' => 'back_to_top#logout'
+  get 'error' => 'error#index'
 
   # user
   get 'user_login' => 'user_login#index'
