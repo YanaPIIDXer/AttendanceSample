@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  UserId: 1
+  StartTime: 2019-07-12 09:07:28
+  EndTime: 2019-07-12 09:07:28
+  HourlySalary: 1
+
+two:
+  UserId: 1
+  StartTime: 2019-07-12 09:07:28
+  EndTime: 2019-07-12 09:07:28
+  HourlySalary: 1

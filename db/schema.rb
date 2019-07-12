@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_205846) do
+ActiveRecord::Schema.define(version: 2019_07_12_000728) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "UserName"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 2019_07_11_205846) do
     t.string "PassWord"
     t.integer "SalaryId", default: 0
     t.integer "CurrentWorkTimeId", default: 0
+  end
+
+  create_table "work_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "UserId"
+    t.datetime "StartTime"
+    t.datetime "EndTime"
+    t.integer "HourlySalary"
   end
 
 end
