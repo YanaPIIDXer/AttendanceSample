@@ -1,0 +1,10 @@
+<%= form_with  scope: :session, url: targetUrl do |form| %>
+    ユーザ名：
+    <%= form.text_field :userName %>
+    <br />
+    パスワード：
+    <%= form.password_field :passWord %>
+    <br />
+    <%= form.submit "ログイン" %>
+    <br />
+<% end %>

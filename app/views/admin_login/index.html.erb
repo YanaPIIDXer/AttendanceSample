@@ -1,0 +1,9 @@
+<%= render partial: "application/pageheader", locals: {title: "管理者ログイン"} %>
+
+<%= render partial: "application/loginform", locals: {targetUrl: "/admin_check"} %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font>
+<% end %>
+
+<%= render partial: "application/pagefooter" %>

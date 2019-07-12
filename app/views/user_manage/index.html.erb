@@ -1,0 +1,41 @@
+<%= render partial: "application/pageheader", locals: {title: "アルバイト管理"} %>
+
+<% @users.each do |user| %>
+    <%= user.UserName %>
+    <%= form_with model: @changeUser, :url => "/user_manage/change", :html => {:style => "display: inline"} do |form| %>
+        <%= form.hidden_field :userId, :value => user.id %>
+        <%= form.collection_select :salaryId, Salary.all, :id, :HourlySalary, {:selected => user.SalaryId} %>円
+        <%= form.submit "時給変更" %>
+    <% end %>
+
+    <%= form_with model: @removeUser, :url => "/user_manage/delete", :html => {:style => "display: inline"} do |form| %>
+        <%= form.hidden_field :userId, :value => user.id %>
+        <%= form.submit "削除" %>
+    <% end %>
+    <br />
+<% end %>
+
+<h3>アルバイト追加</h3>
+<%= form_with url: "/user_manage/create" do |form| %>
+    ユーザ名
+    <%= form.text_field :userName %><br />
+    パスワード
+    <%= form.password_field :passWord %><br />
+    時給
+    <%= form.collection_select :salaryId, Salary.all, :id, :HourlySalary %>円<br />
+    <%= form.submit "追加" %>
+<% end %>
+
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font>
+<% end %>
+
+<div align="right">
+    <a href="/admin_main">戻る</a><br />
+</div>
+
+<%= render partial: "application/pagefooter" %>

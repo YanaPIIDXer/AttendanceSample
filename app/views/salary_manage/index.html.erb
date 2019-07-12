@@ -1,0 +1,29 @@
+<%= render partial: "application/pageheader", locals: {title: "管理者ページ"} %>
+
+<% if Salary.userAdded.exists? %>
+    <%= form_with model: @removeSalary, url: "salary_manage/delete" do |form| %>
+        <%= form.collection_select :salaryId, Salary.userAdded, :id, :HourlySalary %>円
+        <%= form.submit "消去" %>
+    <% end %>
+    <hr />
+<% end %>
+
+<h3>時給追加</h3>
+<%= form_with model: @addSalary do |form| %>
+    <%= form.number_field :HourlySalary %>
+    <%= form.submit "追加" %>
+<% end %>
+
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font>
+<% end %>
+
+<div align="right">
+    <a href="/admin_main">戻る</a><br />
+</div>
+
+<%= render partial: "application/pagefooter" %>
