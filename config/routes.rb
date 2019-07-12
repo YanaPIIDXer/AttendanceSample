@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'user_login' => 'user_login#index'
   post 'user_check' => 'user_check#index'
   get 'user_main' => 'user_main#index'
+  post 'work_time/attendance'
+  post 'work_time/leave'
 
   # admin
   get 'admin_login' => 'admin_login#index'

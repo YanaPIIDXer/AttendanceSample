@@ -3,4 +3,20 @@
 <h3><%= session[:userName] %>さん、おはようございます。</h3>
 <hr />
 
+<%= form_with :url => "/work_time/attendance", :html => {:style => "display: inline"} do |form| %>
+    <%= form.submit "出勤" %>
+<% end %>
+
+<%= form_with :url => "/work_time/leave", :html => {:style => "display: inline"} do |form| %>
+    <%= form.submit "出勤" %>
+<% end %>
+
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
+<% if flash[:alert] %>
+    <font color="#FF0000"><%= flash[:alert] %></font>
+<% end %>
+
 <%= render partial: "application/pagefooter" %>
