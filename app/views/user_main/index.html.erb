@@ -10,7 +10,11 @@
 <%= form_with :url => "/work_time/leave", :html => {:style => "display: inline"} do |form| %>
     <%= form.submit "出勤" %>
 <% end %>
-<br />
+<hr />
+
+<h3>先月の月給：<%= @prevMonthSalary %>円</h3>
+<h3>今月の月給：<%= @currentMonthSalary %>円</h3>
+<hr />
 
 <% if flash[:notice] %>
     <p><%= flash[:notice] %></p>
