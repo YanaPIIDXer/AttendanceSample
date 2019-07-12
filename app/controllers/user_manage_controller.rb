@@ -1,5 +1,9 @@
-class UserManageController < ApplicationController
+class UserManageController < AdminPageBaseController
   def index
+    if redirectToErrorPageWhenNotLogin
+      return
+    end
+
     @users = User.all
   end
 

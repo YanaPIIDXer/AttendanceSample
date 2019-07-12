@@ -1,6 +1,9 @@
-class SalaryManageController < ApplicationController
+class SalaryManageController < AdminPageBaseController
   
   def index
+    if redirectToErrorPageWhenNotLogin
+      return
+    end
   end
 
   def create

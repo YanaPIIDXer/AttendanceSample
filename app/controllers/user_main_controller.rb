@@ -1,6 +1,11 @@
 class UserMainController < ApplicationController
   
   def index
+    if !session[:userName]
+      redirect_to "/error"
+      return
+    end
+
     currentTime = DateTime.now
     prevMonthTime = currentTime << 1
     @prevMonthSalary = calcMonthlySalary(prevMonthTime.year, prevMonthTime.month)
